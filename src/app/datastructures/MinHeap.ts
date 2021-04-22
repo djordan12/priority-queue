@@ -16,7 +16,7 @@ export class MinHeap {
         this.bubbleUp();
     }
 
-    public pop(node) {
+    public pop() {
         const min = this.heap[0];
         this.heap[0] = this.heap[this.size - 1];
         this.heap.pop();
