@@ -1,0 +1,31 @@
+<section>
+    <label>Pick the highest level of approval: CEO Ranked Highest</label>
+    <mat-radio-group 
+        class="radio-group" 
+        [(ngModel)] ="highestLevel">
+      <mat-radio-button 
+        class="radio-button" 
+        *ngFor="let level of priorityLevels" 
+        [value]="level"
+        (click)="levelSelected(level)"> {{ priorityLevelName(level) }}
+      </mat-radio-button>
+    </mat-radio-group>
+    <div>Selected Level of Approval: {{ priorityLevelName(highestLevel) }}</div>
+</section>
+
+<section>
+    <mat-form-field class="form-field">
+        <mat-label>Enter Quantity</mat-label>
+        <input matInput type="number" [(ngModel)]="quantity">
+        <button mat-button 
+          *ngIf="quantity" 
+          matSuffix mat-icon-button aria-label="Clear" 
+          (click)="quantity=''">
+          <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</section>
+
+<section>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+</section>
