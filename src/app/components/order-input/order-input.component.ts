@@ -9,7 +9,7 @@ import { PriorityLevel } from '../priority-queue/PriorityLevel';
 })
 export class OrderInputComponent implements OnInit {
 
-  highestLevel: PriorityLevel;
+  highestLevel: PriorityLevel | number;
   priorityLevels: Array<PriorityLevel>;
   hasLevel: boolean;
 
@@ -46,6 +46,10 @@ export class OrderInputComponent implements OnInit {
   }
 
   public onSubmit() {
+    if (!this.highestLevel) {
+      this.highestLevel = this.quantity;
+    }
     this.submit.emit({ item: this.quantity, priority: this.highestLevel });
+    this.highestLevel = null;
   }
 }

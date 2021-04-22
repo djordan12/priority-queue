@@ -19,4 +19,9 @@ export class AppComponent {
   public display() {
     this.minHeap.printInLineConsole();
   }
+
+  public pop() {
+    let heapItem = this.minHeap.pop();
+    console.log("First in line: Item: " + heapItem.item + ", Priority: " + heapItem.priority);
+  }
 }
