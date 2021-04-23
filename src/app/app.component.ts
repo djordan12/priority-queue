@@ -18,6 +18,7 @@ export class AppComponent {
 
   public display() {
     this.minHeap.printInLineConsole();
+    this.minHeap.printByNodes();
   }
 
   public pop() {

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { PriorityLevel } from '../priority-queue/PriorityLevel';
+import { PriorityLevel } from '../../datastructures/PriorityLevel';
 
 @Component({
   selector: 'app-order-input',
